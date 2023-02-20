@@ -15,7 +15,98 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong class="capitalize">{{ folder.toUpperCase() }}</strong>
+
+    <ng-template [ngIf]="folder === AccessibilityCase.Lists">
+      <p>List with ul and li</p>
+      <ul>
+        <li *ngFor="let e of listExamples">{{ e }}</li>
+      </ul>
+
+      <p>List with ul and li and roles "list" and "listitem"</p>
+      <ul role="list">
+        <li *ngFor="let e of listExamples" role="listitem">{{ e }}</li>
+      </ul>
+
+      <ion-list>
+        <ion-list-header>List with ion-list</ion-list-header>
+        <ion-item *ngFor="let e of listExamples" lines="none">
+          <ion-label>{{ e }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ng-template>
+
+    <ng-template [ngIf]="folder === AccessibilityCase.Labels">
+      <p>Div with more info and no aria-labels</p>
+      <div class="multiple-info-container">
+        <span class="title">Titolo</span>
+        <span class="subtitle">Sottotitolo</span>
+        <span class="text">Testo scritto</span>
+      </div>
+
+      <p>Div with more info with single aria-label and elements hidden</p>
+      <div class="multiple-info-container" aria-label="Titolo - Sottotitolo - Testo scritto">
+        <span aria-hidden="true" class="title">Titolo</span>
+        <span aria-hidden="true" class="subtitle">Sottotitolo</span>
+        <span aria-hidden="true" class="text">Testo scritto</span>
+      </div>
+
+    <p>Date</p>
+    <div>
+      <p>09/02/2012​</p>
+      <p>09/02/12​</p>
+      <p>09.02.2012​</p>
+      <p>09.02.12​</p>
+      <p>09-02-2012​</p>
+      <p>09-02-12</p>
+    </div>
+
+
+    <p>Orari</p>
+    <div>
+      <p>12:34​</p>
+      <p>12.34​</p>
+    </div>
+  </ng-template>
+
+
+    <ng-template [ngIf]="folder === AccessibilityCase.Buttons">
+    <p>Buttons</p>
+
+    <div class="buttons-container">
+      <ion-button (click)="showAlert()">Normale</ion-button>
+      <ion-button role="button" (click)="showAlert()">Con ruolo</ion-button>
+
+      <div role="button">
+        <ion-button (click)="showAlert()">Con ruolo sul div e click sul bottone</ion-button>
+      </div>
+
+      <div (click)="showAlert()">
+        <ion-button role="button">Con ruolo sul bottone e click sul div</ion-button>
+      </div>
+    </div>
+    </ng-template>
+
+    <ng-template [ngIf]="folder === AccessibilityCase.Inputs">
+    <p>Input e errori</p>
+    <div>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" required="true"></ion-input>
+      <div aria-live="polite">
+        <p>Il campo non può essere vuoto</p>
+      </div>
+    </div>
+  </ng-template>
+
+    <!-- TODO landmarks -->
+
+    <!-- TODO toggles
+      Example:
+        <ion-label>
+      Toggle Dark Theme
+    </ion-label>
+    <ion-toggle (ionChange)="onChangeMode($event)" slot="end"></ion-toggle>-->
+
   </div>
 </ion-content>
