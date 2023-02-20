@@ -13,6 +13,16 @@
             </ion-item>
           </ion-menu-toggle>
 
+          <div class="divider"></div>
+
+          <ion-menu-toggle auto-hide="false">
+            <div class="mode-toggle">
+              <ion-label>
+                Toggle Dark Theme
+              </ion-label>
+              <ion-toggle (ionChange)="onChangeMode($event)"></ion-toggle>
+            </div>
+          </ion-menu-toggle>
 
         </ion-list>
       </ion-content>

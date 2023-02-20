@@ -14,4 +14,13 @@ export class AppComponent {
     { title: AccessibilityCase.Inputs, url: '/folder/' + AccessibilityCase.Inputs },
   ];
   constructor() {}
+
+  public onChangeMode(event: any) {
+    if (event.detail.checked) {
+      document.body.setAttribute('color-theme', 'dark');
+    } else {
+      document.body.setAttribute('color-theme', 'light');
+    }
+  }
+
 }

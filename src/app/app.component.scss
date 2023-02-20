@@ -113,3 +113,16 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.divider {
+  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+  margin: 8px 0px;
+}
+
+.mode-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+}
