@@ -1,0 +1,7 @@
+{
+  "name": "a11y-guide",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

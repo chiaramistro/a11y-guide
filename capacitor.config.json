@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "a11y-guide",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
