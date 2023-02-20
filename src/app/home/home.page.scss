@@ -1,0 +1,40 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.multiple-info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: white;
+  color: black;
+
+  .title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 10px;
+  }
+}
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+}
